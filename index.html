@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI@Unicam — Artificial Intelligence Lab, University of Camerino</title>
+<meta name="description" content="AI@Unicam is the artificial intelligence research lab at the University of Camerino. Papers, seminars, and ongoing work." />
+
+<!-- Prevent theme and language flash before first paint -->
+<script>
+  try {
+    var t = localStorage.getItem("aiunicam-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("aiunicam-lang") || "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="logotype" href="index.html">AI<em>@</em>Unicam</a>
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html" class="active"><span class="lang-en">Home</span><span class="lang-it">Home</span></a>
+      <a href="papers.html"><span class="lang-en">Publications</span><span class="lang-it">Pubblicazioni</span></a>
+      <a href="events.html"><span class="lang-en">Events</span><span class="lang-it">Eventi</span></a>
+    </nav>
+    <div class="nav-tools">
+      <a class="icon-btn" href="https://github.com/AI-Unicam" target="_blank" rel="noopener" aria-label="Lab GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.19-.01-.83-.01-1.51-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.22 1.87.88 2.33.67.07-.52.28-.88.51-1.08-1.78-.2-3.64-.9-3.64-4C2.92 6.63 3.32 5.8 4 5.14c-.07-.2-.31-1.02.07-2.13 0 0 .67-.22 2.2.83a7.5 7.5 0 0 1 4 0c1.53-1.06 2.2-.83 2.2-.83.38 1.11.14 1.93.07 2.13.68.66 1.08 1.48 1.08 2.5 0 3.11-1.87 3.8-3.65 4 .29.25.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.4A8.14 8.14 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/></svg>
+      </a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 14.7A8.6 8.6 0 0 1 9.3 3.6a.6.6 0 0 0-.7-.8A9.3 9.3 0 1 0 21.2 15.4a.6.6 0 0 0-.8-.7Z"/></svg>
+      </button>
+      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">IT</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">University of Camerino, Artificial Intelligence Lab</p>
+      <h1 class="hero-title">
+        <span class="lang-en">Research in core and applied <em>Artificial Intelligence</em>.</span>
+        <span class="lang-it">Ricerca in Intelligenza Artificiale <em>fondazionale e applicata</em>.</span>
+      </h1>
+      <p class="lede">
+        <span class="lang-en">We investigate theoretical and computational foundations of machine learning, autonomous systems, and interdisciplinary domain applications within the School of Science and Technology at the University of Camerino</span>
+        <span class="lang-it">Il laboratorio studia i fondamenti teorici e computazionali dell'apprendimento automatico, dei sistemi autonomi e delle loro applicazioni in domini interdisciplinari presso la Scuola di Scienze e Tecnologie dell'Università di Camerino.</span>
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="papers.html">
+          <span class="lang-en">Publications</span>
+          <span class="lang-it">Pubblicazioni</span>
+        </a>
+        <a class="btn btn-ghost" href="events.html">
+          <span class="lang-en">Seminars &amp; Events</span>
+          <span class="lang-it">Seminari ed Eventi</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="AI@Unicam conceptual mark with a research graph and Camerino skyline">
+      <img class="hero-symbol hero-symbol-light" src="assets/aiunicam-home-symbol-light.png" width="532" height="509" alt="A network of connected nodes surrounding a minimal line drawing of Camerino, with one red node highlighted." />
+      <img class="hero-symbol hero-symbol-dark" src="assets/aiunicam-home-symbol-dark.png" width="532" height="509" alt="" aria-hidden="true" />
+    </div>
+  </div>
+
+  <section class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">
+        <span class="lang-en">Research Areas</span>
+        <span class="lang-it">Linee di Ricerca</span>
+      </h2>
+      <p class="section-note">
+        <span class="lang-en">Current research directions of the laboratory.</span>
+        <span class="lang-it">Principali ambiti di ricerca del laboratorio.</span>
+      </p>
+    </div>
+   <ul class="plain-list">
+      <li>
+        <span class="label">01 / ML</span>
+        <div class="body">
+          <h3>
+            <span class="lang-en">Spatio-Temporal &amp; Graph Learning</span>
+            <span class="lang-it">Spatio-Temporal e Graph Learning</span>
+          </h3>
+          <p>
+            <span class="lang-en">Theoretical and applied architectures for time-series forecasting, geometric deep learning, and spatial process modeling.</span>
+            <span class="lang-it">Architetture teoriche e applicate per la previsione di serie storiche, geometric deep learning e modellazione di processi spaziali.</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="label">02 / SE</span>
+        <div class="body">
+          <h3>
+            <span class="lang-en">Intelligent Software Systems</span>
+            <span class="lang-it">Sistemi Software Intelligenti</span>
+          </h3>
+          <p>
+            <span class="lang-en">Study of machine learning, heuristic optimization, and automated reasoning for software verification and testing.</span>
+            <span class="lang-it">Studio di apprendimento automatico, ottimizzazione euristica e ragionamento automatico per la verifica e il testing del software.</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="label">02 / DS</span>
+        <div class="body">
+          <h3>
+            <span class="lang-en">Data Science &amp; Knowledge Engineering</span>
+            <span class="lang-it">Data Science e Ingegneria della Conoscenza</span>
+          </h3>
+          <p>
+            <span class="lang-en">Investigating semantic data integration, open data ecosystems, metadata generation, and the structural synthesis of knowledge graphs.</span>
+            <span class="lang-it">Studio dell'integrazione semantica dei dati, ecosistemi di open data, generazione di metadati e sintesi strutturale di grafi di conoscenza.</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="label">03 / BIO</span>
+        <div class="body">
+          <h3>
+            <span class="lang-en">Computational &amp; Mathematical Biology</span>
+            <span class="lang-it">Biologia Computazionale</span>
+          </h3>
+          <p>
+            <span class="lang-en">Mathematical modeling and complex system analysis applied to biological frameworks, structural dynamics, and signal profiling.</span>
+            <span class="lang-it">Modellazione matematica e analisi di sistemi complessi applicate a framework biologici, dinamiche strutturali e profilazione dei segnali.</span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="label">04 / XAI</span>
+        <div class="body">
+          <h3>
+            <span class="lang-en">Explainable AI &amp; Robustness</span>
+            <span class="lang-it">Explainable AI e Robustness</span>
+          </h3>
+          <p>
+            <span class="lang-en">Frameworks for algorithmic interpretability, counterfactual reasoning, and robust statistical inference in decision-making processes.</span>
+            <span class="lang-it">Framework per l'interpretabilità algoritmica, il ragionamento controfattuale e l'inferenza statistica robusta nei processi decisionali.</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <div class="affiliation">
+      <span>
+        <span class="lang-en">School of Science and Technology, <a href="https://www.unicam.it/" target="_blank" rel="noopener">University of Camerino</a></span>
+        <span class="lang-it">Scuola di Scienze e Tecnologie, <a href="https://www.unicam.it/" target="_blank" rel="noopener">Università di Camerino</a></span>
+      </span>
+      <a href="https://github.com/AI-Unicam" target="_blank" rel="noopener">
+        <span class="lang-en">Open Source Repository →</span>
+        <span class="lang-it">Repository Open Source →</span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>AI@Unicam — Università di Camerino</span>
+    <div class="footer-links">
+      <a href="https://www.unicam.it/" target="_blank" rel="noopener">unicam.it</a>
+      <a href="https://github.com/AI-Unicam" target="_blank" rel="noopener">GitHub</a>
+      <a href="papers.html"><span class="lang-en">Publications</span><span class="lang-it">Pubblicazioni</span></a>
+      <a href="events.html"><span class="lang-en">Events</span><span class="lang-it">Eventi</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
