@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lab Members — AI@Unicam</title>
+<meta name="description" content="Members of the AI@Unicam laboratory." />
+
+<script>
+  try {
+    var t = localStorage.getItem("aiunicam-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+    var l = localStorage.getItem("aiunicam-lang") || "en";
+    document.documentElement.setAttribute("lang", l);
+  } catch (e) {}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+
+<style>
+  .team-section {
+    margin-bottom: 3rem;
+  }
+
+  .team-section h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .member-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
+    border-radius: 1rem;
+    background: var(--surface, rgba(255, 255, 255, 0.75));
+  }
+
+  .member-avatar {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-family: "IBM Plex Mono", monospace;
+    background: var(--muted, rgba(0, 0, 0, 0.08));
+  }
+
+  .member-info h3 {
+    margin: 0.5rem 0 0.4rem;
+  }
+
+  .member-info p {
+    margin: 0.4rem 0;
+  }
+</style>
+</head>
+
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="logotype" href="index.html">AI<em>@</em>Unicam</a>
+
+    <nav class="primary" aria-label="Primary">
+      <a href="index.html">
+        <span class="lang-en">Home</span>
+        <span class="lang-it">Home</span>
+      </a>
+
+      <a href="papers.html">
+        <span class="lang-en">Papers</span>
+        <span class="lang-it">Pubblicazioni</span>
+      </a>
+
+      <a href="events.html">
+        <span class="lang-en">Next Events</span>
+        <span class="lang-it">Prossimi Eventi</span>
+      </a>
+
+      <a href="members.html" class="active">
+        <span class="lang-en">Lab Members</span>
+        <span class="lang-it">Membri del laboratorio</span>
+      </a>
+    </nav>
+
+    <div class="nav-tools">
+      <a class="icon-btn" href="https://github.com/AI-Unicam" target="_blank" rel="noopener" aria-label="Lab GitHub">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.19-.01-.83-.01-1.51-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.22 1.87.88 2.33.67.07-.52.28-.88.51-1.08-1.78-.2-3.64-.9-3.64-4C2.92 6.63 3.32 5.8 4 5.14c-.07-.2-.31-1.02.07-2.13 0 0 .67-.22 2.2.83a7.5 7.5 0 0 1 4 0c1.53-1.06 2.2-.83 2.2-.83.38 1.11.14 1.93.07 2.13.68.66 1.08 1.48 1.08 2.5 0 3.11-1.87 3.8-3.65 4 .29.25.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.4A8.14 8.14 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/>
+        </svg>
+      </a>
+
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+        </svg>
+
+        <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.4 14.7A8.6 8.6 0 0 1 9.3 3.6a.6.6 0 0 0-.7-.8A9.3 9.3 0 1 0 21.2 15.4a.6.6 0 0 0-.8-.7Z"/>
+        </svg>
+      </button>
+
+      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">IT</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-hero">
+    <p class="eyebrow">
+      <span class="lang-en">People</span>
+      <span class="lang-it">Persone</span>
+    </p>
+
+    <h1 class="page-title">
+      <span class="lang-en">Lab members</span>
+      <span class="lang-it">Membri del laboratorio</span>
+    </h1>
+
+    <p>
+      <span class="lang-en">Meet the researchers, students, and collaborators of AI@Unicam.</span>
+      <span class="lang-it">Scopri ricercatori, studenti e collaboratori di AI@Unicam.</span>
+    </p>
+  </div>
+
+  <section class="wrap">
+    <div class="team-section">
+      <h2>
+        <span class="lang-en">Core team</span>
+        <span class="lang-it">Team principale</span>
+      </h2>
+
+      <div class="member-grid">
+
+        <article class="member-card">
+          <div class="member-avatar">MN</div>
+
+          <div class="member-info">
+            <span class="tag">
+              <span class="lang-en">Researcher</span>
+              <span class="lang-it">Ricercatore</span>
+            </span>
+
+            <h3>Member Name</h3>
+
+            <p>
+              <span class="lang-en">
+                Research interests: artificial intelligence, machine learning, and intelligent systems.
+              </span>
+              <span class="lang-it">
+                Interessi di ricerca: intelligenza artificiale, machine learning e sistemi intelligenti.
+              </span>
+            </p>
+
+            <p class="meta">
+              <a href="mailto:name@example.com">Email</a> ·
+              <a href="#" target="_blank" rel="noopener">Website</a> ·
+              <a href="#" target="_blank" rel="noopener">GitHub</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-row">
+    <span>AI@Unicam — Università di Camerino</span>
+
+    <div class="footer-links">
+      <a href="https://www.unicam.it/" target="_blank" rel="noopener">unicam.it</a>
+      <a href="https://github.com/AI-Unicam" target="_blank" rel="noopener">GitHub</a>
+
+      <a href="index.html">
+        <span class="lang-en">Home</span>
+        <span class="lang-it">Home</span>
+      </a>
+
+      <a href="papers.html">
+        <span class="lang-en">Papers</span>
+        <span class="lang-it">Pubblicazioni</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
