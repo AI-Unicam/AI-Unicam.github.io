@@ -1,333 +1,514 @@
 <!doctype html>
+
 <html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Members — AI@Unicam</title>
-<meta name="description" content="Members of the AI@Unicam laboratory." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<script>
-  try {
-    var t = localStorage.getItem("aiunicam-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    document.documentElement.setAttribute("data-theme", t);
-    var l = localStorage.getItem("aiunicam-lang") || "en";
-    document.documentElement.setAttribute("lang", l);
-  } catch (e) {}
-</script>
+  <title>Members — AI@Unicam</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css" />
+<meta
+ name="description"
+ content="Members of the AI@Unicam laboratory."
+/>
 
-<style>
-  .team-section {
-    margin-bottom: 3rem;
-  }
+  <script>
+    try {
+      var t =
+        localStorage.getItem("aiunicam-theme") ||
+        (window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light");
 
-  .team-section h2 {
-    margin-bottom: 1.25rem;
-  }
+      document.documentElement.setAttribute("data-theme", t);
 
-  .member-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
-  }
+      var l = localStorage.getItem("aiunicam-lang") || "en";
+      document.documentElement.setAttribute("lang", l);
+    } catch (e) {}
+  </script>
 
-  .member-card {
-    display: flex;
-    gap: 1rem;
-    padding: 1.25rem;
-    border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
-    border-radius: 1rem;
-    background: var(--surface, rgba(255, 255, 255, 0.75));
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-  .member-avatar {
-    width: 56px;
-    height: 56px;
-    flex: 0 0 56px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: 600;
-    font-family: "IBM Plex Mono", monospace;
-    background: var(--muted, rgba(0, 0, 0, 0.08));
-  }
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
-  .member-info h3 {
-    margin: 0.5rem 0 0.4rem;
-  }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
-  .member-info p {
-    margin: 0.4rem 0;
-  }
-</style>
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    .team-section {
+      margin-bottom: 3rem;
+    }
+
+    .team-section h2 {
+      margin-bottom: 1.25rem;
+    }
+
+    /*
+      One member per row.
+    */
+    .member-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .member-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      width: 100%;
+      padding: 1.5rem;
+      border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
+      border-radius: 1rem;
+      background: var(--surface, rgba(255, 255, 255, 0.75));
+    }
+
+    /*
+      Circular member photograph.
+    */
+    .member-avatar {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 112px;
+      display: block;
+      border: 1px solid var(--border, rgba(0, 0, 0, 0.12));
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      background: var(--muted, rgba(0, 0, 0, 0.08));
+    }
+
+    .member-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .member-info h3 {
+      margin: 0.5rem 0 0.4rem;
+    }
+
+    .member-info p {
+      margin: 0.4rem 0;
+    }
+
+    .member-info .meta {
+      margin-top: 0.75rem;
+    }
+
+    /*
+      Stack image above member information on smaller screens.
+    */
+    @media (max-width: 600px) {
+      .member-card {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .member-avatar {
+        width: 96px;
+        height: 96px;
+        flex-basis: 96px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<header class="site">
-  <div class="wrap nav-row">
-    <a class="logotype" href="index.html">AI<em>@</em>Unicam</a>
+  <header class="site">
+    <div class="wrap nav-row">
 
-    <nav class="primary" aria-label="Primary">
-      <a href="index.html">
-        <span class="lang-en">Home</span>
-        <span class="lang-it">Home</span>
-      </a>
+```
+  <a class="logotype" href="index.html">
+    AI<em>@</em>Unicam
+  </a>
 
-      <a href="papers.html">
-        <span class="lang-en">Papers</span>
-        <span class="lang-it">Pubblicazioni</span>
-      </a>
+  <nav class="primary" aria-label="Primary navigation">
 
-      <a href="events.html">
-        <span class="lang-en">Next Events</span>
-        <span class="lang-it">Prossimi Eventi</span>
-      </a>
+    <a href="index.html">
+      <span class="lang-en">Home</span>
+      <span class="lang-it">Home</span>
+    </a>
 
-      <a href="members.html" class="active">
-        <span class="lang-en">Members</span>
-        <span class="lang-it">Membri</span>
-      </a>
-    </nav>
+    <a href="papers.html">
+      <span class="lang-en">Papers</span>
+      <span class="lang-it">Pubblicazioni</span>
+    </a>
 
-    <div class="nav-tools">
-      <a class="icon-btn" href="https://github.com/AI-Unicam" target="_blank" rel="noopener" aria-label="Lab GitHub">
-        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.19-.01-.83-.01-1.51-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.22 1.87.88 2.33.67.07-.52.28-.88.51-1.08-1.78-.2-3.64-.9-3.64-4C2.92 6.63 3.32 5.8 4 5.14c-.07-.2-.31-1.02.07-2.13 0 0 .67-.22 2.2.83a7.5 7.5 0 0 1 4 0c1.53-1.06 2.2-.83 2.2-.83.38 1.11.14 1.93.07 2.13.68.66 1.08 1.48 1.08 2.5 0 3.11-1.87 3.8-3.65 4 .29.25.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.4A8.14 8.14 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"/>
-        </svg>
-      </a>
+    <a href="events.html">
+      <span class="lang-en">Next Events</span>
+      <span class="lang-it">Prossimi Eventi</span>
+    </a>
 
-      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.2"/>
-          <path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
-        </svg>
+    <a
+      href="members.html"
+      class="active"
+      aria-current="page"
+    >
+      <span class="lang-en">Members</span>
+      <span class="lang-it">Membri</span>
+    </a>
 
-        <svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M20.4 14.7A8.6 8.6 0 0 1 9.3 3.6a.6.6 0 0 0-.7-.8A9.3 9.3 0 1 0 21.2 15.4a.6.6 0 0 0-.8-.7Z"/>
-        </svg>
-      </button>
+  </nav>
 
-      <button class="lang-btn" id="lang-toggle" aria-label="Switch language">IT</button>
-    </div>
+  <div class="nav-tools">
+
+    <a
+      class="icon-btn"
+      href="https://github.com/AI-Unicam"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="AI@Unicam GitHub"
+    >
+      <svg
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M8 0C3.58 0 0 3.64 0 8.13c0 3.6 2.29 6.65 5.47 7.72.4.08.55-.18.55-.4 0-.19-.01-.83-.01-1.51-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.15-.28-.15-.68-.53-.01-.54.63-.01 1.08.59 1.23.83.72 1.22 1.87.88 2.33.67.07-.52.28-.88.51-1.08-1.78-.2-3.64-.9-3.64-4C2.92 6.63 3.32 5.8 4 5.14c-.07-.2-.31-1.02.07-2.13 0 0 .67-.22 2.2.83a7.5 7.5 0 0 1 4 0c1.53-1.06 2.2-.83 2.2-.83.38 1.11.14 1.93.07 2.13.68.66 1.08 1.48 1.08 2.5 0 3.11-1.87 3.8-3.65 4 .29.25.54.75.54 1.51 0 1.09-.01 1.97-.01 2.24 0 .22.15.48.55.4A8.14 8.14 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z" />
+      </svg>
+    </a>
+
+    <button
+      class="icon-btn"
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle dark mode"
+      aria-pressed="false"
+    >
+      <svg
+        class="sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
+      </svg>
+
+      <svg
+        class="moon"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path d="M20.4 14.7A8.6 8.6 0 0 1 9.3 3.6a.6.6 0 0 0-.7-.8A9.3 9.3 0 1 0 21.2 15.4a.6.6 0 0 0-.8-.7Z" />
+      </svg>
+    </button>
+
+    <button
+      class="lang-btn"
+      id="lang-toggle"
+      type="button"
+      aria-label="Switch language"
+    >
+      IT
+    </button>
+
   </div>
-</header>
+</div>
+```
 
-<main>
-  <div class="wrap page-hero">
-    <p class="eyebrow">
-      <span class="lang-en">People</span>
-      <span class="lang-it">Persone</span>
-    </p>
+  </header>
 
-    <h1 class="page-title">
-      <span class="lang-en">Lab members</span>
-      <span class="lang-it">Membri del laboratorio</span>
-    </h1>
+  <main>
 
-    <p>
-      <span class="lang-en">Meet the researchers, students, and collaborators of AI@Unicam.</span>
-      <span class="lang-it">Scopri ricercatori, studenti e collaboratori di AI@Unicam.</span>
-    </p>
-  </div>
+```
+<div class="wrap page-hero">
 
-  <section class="wrap">
-    <div class="team-section">
-      <h2>
-        <span class="lang-en">Core team</span>
-        <span class="lang-it">Team principale</span>
-      </h2>
+  <p class="eyebrow">
+    <span class="lang-en">People</span>
+    <span class="lang-it">Persone</span>
+  </p>
 
-      <div class="member-grid">
+  <h1 class="page-title">
+    <span class="lang-en">Lab members</span>
+    <span class="lang-it">Membri del laboratorio</span>
+  </h1>
 
-  <!-- Umair Ahmed -->
-  <article class="member-card">
-    <div class="member-avatar" aria-hidden="true">UA</div>
+  <p>
+    <span class="lang-en">
+      Meet the researchers, students, and collaborators of AI@Unicam.
+    </span>
 
-    <div class="member-info">
-      <span class="tag">
-        <span class="lang-en">AI Researcher</span>
-        <span class="lang-it">Ricercatore IA</span>
-      </span>
-
-      <h3>Umair Ahmed</h3>
-
-      <p>
-        <span class="lang-en">
-          Research interests: artificial intelligence, collective intelligence,
-          knowledge graphs, machine learning, and AI-enabled open data ecosystems.
-        </span>
-
-        <span class="lang-it">
-          Interessi di ricerca: intelligenza artificiale, intelligenza collettiva,
-          knowledge graph, machine learning ed ecosistemi open data supportati dall’IA.
-        </span>
-      </p>
-
-      <p class="meta">
-        <a href="mailto:umair.ahmed@unicam.it">Email</a> ·
-        <a
-          href="https://scholar.google.com/citations?user=XRj3UHUAAAAJ&hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Google Scholar
-        </a>
-      </p>
-    </div>
-  </article>
-
-
-  <!-- Filippo Lampa -->
-  <article class="member-card">
-    <div class="member-avatar" aria-hidden="true">FL</div>
-
-    <div class="member-info">
-      <span class="tag">
-        <span class="lang-en">PhD Student</span>
-        <span class="lang-it">Dottorando</span>
-      </span>
-
-      <h3>Filippo Lampa</h3>
-
-      <p>
-        <span class="lang-en">
-          Research interests: adaptive and online learning, cooperative and
-          multi-agent AI, sequential decision-making, and blockchain security
-          and reliability.
-        </span>
-
-        <span class="lang-it">
-          Interessi di ricerca: apprendimento adattivo e online, IA cooperativa
-          e multi-agente, processi decisionali sequenziali, sicurezza e
-          affidabilità delle blockchain.
-        </span>
-      </p>
-
-      <p class="meta">
-        <a href="mailto:filippo.lampa@unicam.it">Email</a> ·
-        <a
-          href="https://filippo-lampa.github.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Website
-        </a> ·
-        <a
-          href="https://scholar.google.com/citations?user=NrJAPq8AAAAJ&hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Google Scholar
-        </a>
-      </p>
-    </div>
-  </article>
-
-
-  <!-- Marta Capuani -->
-  <article class="member-card">
-    <div class="member-avatar" aria-hidden="true">MC</div>
-
-    <div class="member-info">
-      <span class="tag">
-        <span class="lang-en">PhD Student</span>
-        <span class="lang-it">Dottoranda</span>
-      </span>
-
-      <h3>Marta Capuani</h3>
-
-      <p>
-        <span class="lang-en">
-          Research interests: software testing, requirements engineering,
-          software quality, and the use of large language models to support
-          requirements analysis and test generation.
-        </span>
-
-        <span class="lang-it">
-          Interessi di ricerca: software testing, ingegneria dei requisiti,
-          qualità del software e utilizzo dei large language model per
-          supportare l’analisi dei requisiti e la generazione dei test.
-        </span>
-      </p>
-    </div>
-  </article>
-
-
-  <!-- Martina Zannotti -->
-  <article class="member-card">
-    <div class="member-avatar" aria-hidden="true">MZ</div>
-
-    <div class="member-info">
-      <span class="tag">
-        <span class="lang-en">PhD Student</span>
-        <span class="lang-it">Dottoranda</span>
-      </span>
-
-      <h3>Martina Zannotti</h3>
-
-      <p>
-        <span class="lang-en">
-          Research interests: explainable artificial intelligence, model
-          traceability, counterfactual explanations, graph neural networks,
-          and the interpretability of machine-learning models.
-        </span>
-
-        <span class="lang-it">
-          Interessi di ricerca: intelligenza artificiale spiegabile,
-          tracciabilità dei modelli, spiegazioni controfattuali, graph neural
-          network e interpretabilità dei modelli di machine learning.
-        </span>
-      </p>
-
-      <p class="meta">
-        <a href="mailto:martina.zannotti@unicam.it">Email</a> ·
-        <a
-          href="https://www.researchgate.net/profile/Martina-Zannotti"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ResearchGate
-        </a>
-      </p>
-    </div>
-  </article>
+    <span class="lang-it">
+      Scopri ricercatori, studenti e collaboratori di AI@Unicam.
+    </span>
+  </p>
 
 </div>
-    </div>
-  </section>
-</main>
 
-<footer class="site">
-  <div class="wrap footer-row">
-    <span>AI@Unicam — Università di Camerino</span>
 
-    <div class="footer-links">
-      <a href="https://www.unicam.it/" target="_blank" rel="noopener">unicam.it</a>
-      <a href="https://github.com/AI-Unicam" target="_blank" rel="noopener">GitHub</a>
+<section class="wrap">
 
-      <a href="index.html">
-        <span class="lang-en">Home</span>
-        <span class="lang-it">Home</span>
-      </a>
+  <div class="team-section">
 
-      <a href="papers.html">
-        <span class="lang-en">Papers</span>
-        <span class="lang-it">Pubblicazioni</span>
-      </a>
+    <h2>
+      <span class="lang-en">Core team</span>
+      <span class="lang-it">Team principale</span>
+    </h2>
 
-      <a href="members.html">
-        <span class="lang-en">Members</span>
-        <span class="lang-it">Membri</span>
-      </a>
+    <div class="member-grid">
+
+
+      <!-- Umair Ahmed -->
+      <article class="member-card">
+
+        <img
+          class="member-avatar"
+          src="assets/images/members/umair-ahmed.jpg"
+          alt="Portrait of Umair Ahmed"
+          width="112"
+          height="112"
+          loading="lazy"
+        />
+
+        <div class="member-info">
+
+          <span class="tag">
+            <span class="lang-en">AI Researcher</span>
+            <span class="lang-it">Ricercatore IA</span>
+          </span>
+
+          <h3>Umair Ahmed</h3>
+
+          <p>
+            <span class="lang-en">
+              Research interests: artificial intelligence, collective
+              intelligence, knowledge graphs, machine learning, and
+              AI-enabled open-data ecosystems.
+            </span>
+
+            <span class="lang-it">
+              Interessi di ricerca: intelligenza artificiale, intelligenza
+              collettiva, knowledge graph, machine learning ed ecosistemi
+              open data supportati dall’intelligenza artificiale.
+            </span>
+          </p>
+
+          <p class="meta">
+            <a
+              href="https://scholar.google.com/citations?user=XRj3UHUAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Scholar
+            </a>
+          </p>
+
+        </div>
+      </article>
+
+
+      <!-- Filippo Lampa -->
+      <article class="member-card">
+
+        <img
+          class="member-avatar"
+          src="assets/images/members/filippo-lampa.jpg"
+          alt="Portrait of Filippo Lampa"
+          width="112"
+          height="112"
+          loading="lazy"
+        />
+
+        <div class="member-info">
+
+          <span class="tag">
+            <span class="lang-en">PhD Student</span>
+            <span class="lang-it">Dottorando</span>
+          </span>
+
+          <h3>Filippo Lampa</h3>
+
+          <p>
+            <span class="lang-en">
+              Research interests: adaptive and online learning, cooperative
+              and multi-agent artificial intelligence, sequential
+              decision-making, and blockchain security and reliability.
+            </span>
+
+            <span class="lang-it">
+              Interessi di ricerca: apprendimento adattivo e online,
+              intelligenza artificiale cooperativa e multi-agente,
+              processi decisionali sequenziali, sicurezza e affidabilità
+              delle blockchain.
+            </span>
+          </p>
+
+          <p class="meta">
+            <a
+              href="https://filippo-lampa.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </a>
+
+            ·
+
+            <a
+              href="https://scholar.google.com/citations?user=NrJAPq8AAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Scholar
+            </a>
+          </p>
+
+        </div>
+      </article>
+
+
+      <!-- Marta Capuani -->
+      <article class="member-card">
+
+        <img
+          class="member-avatar"
+          src="assets/images/members/marta-capuani.jpg"
+          alt="Portrait of Marta Capuani"
+          width="112"
+          height="112"
+          loading="lazy"
+        />
+
+        <div class="member-info">
+
+          <span class="tag">
+            <span class="lang-en">Researcher</span>
+            <span class="lang-it">Ricercatrice</span>
+          </span>
+
+          <h3>Marta Capuani</h3>
+
+          <p>
+            <span class="lang-en">
+              Research interests: software testing, requirements
+              engineering, software quality, and the use of large language
+              models for requirements analysis and automated test
+              generation.
+            </span>
+
+            <span class="lang-it">
+              Interessi di ricerca: software testing, ingegneria dei
+              requisiti, qualità del software e utilizzo dei large language
+              model per l’analisi dei requisiti e la generazione automatica
+              dei test.
+            </span>
+          </p>
+
+        </div>
+      </article>
+
+
+      <!-- Martina Zannotti -->
+      <article class="member-card">
+
+        <img
+          class="member-avatar"
+          src="assets/images/members/martina-zannotti.jpg"
+          alt="Portrait of Martina Zannotti"
+          width="112"
+          height="112"
+          loading="lazy"
+        />
+
+        <div class="member-info">
+
+          <span class="tag">
+            <span class="lang-en">Researcher</span>
+            <span class="lang-it">Ricercatrice</span>
+          </span>
+
+          <h3>Martina Zannotti</h3>
+
+          <p>
+            <span class="lang-en">
+              Research interests: explainable artificial intelligence,
+              model traceability, counterfactual explanations, and the
+              interpretability of machine-learning models.
+            </span>
+
+            <span class="lang-it">
+              Interessi di ricerca: intelligenza artificiale spiegabile,
+              tracciabilità dei modelli, spiegazioni controfattuali e
+              interpretabilità dei modelli di machine learning.
+            </span>
+          </p>
+
+        </div>
+      </article>
+
+
     </div>
   </div>
-</footer>
+</section>
+```
 
-<script src="assets/script.js"></script>
+  </main>
+
+  <footer class="site">
+    <div class="wrap footer-row">
+
+```
+  <span>AI@Unicam — Università di Camerino</span>
+
+  <div class="footer-links">
+
+    <a
+      href="https://www.unicam.it/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      unicam.it
+    </a>
+
+    <a
+      href="https://github.com/AI-Unicam"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
+
+    <a href="index.html">
+      <span class="lang-en">Home</span>
+      <span class="lang-it">Home</span>
+    </a>
+
+    <a href="papers.html">
+      <span class="lang-en">Papers</span>
+      <span class="lang-it">Pubblicazioni</span>
+    </a>
+
+    <a href="events.html">
+      <span class="lang-en">Next Events</span>
+      <span class="lang-it">Prossimi Eventi</span>
+    </a>
+
+    <a href="members.html" aria-current="page">
+      <span class="lang-en">Members</span>
+      <span class="lang-it">Membri</span>
+    </a>
+
+  </div>
+</div>
+```
+
+  </footer>
+
+  <script src="assets/script.js"></script>
+
 </body>
 </html>
